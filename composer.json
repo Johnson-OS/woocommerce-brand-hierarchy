@@ -1,0 +1,26 @@
+{
+  "name": "pixadv/woocommerce-brand-hierarchy",
+  "description": "Brand → Category → Subcategory navigation for WooCommerce",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "type": "wordpress-plugin",
+  "authors": [
+    {
+      "name": "PixADV",
+      "email": "pixadv.developer@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "WCBH\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=8.1"
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "php -r \"echo 'Autoload dumped.' . PHP_EOL;\""
+    ]
+  }
+}

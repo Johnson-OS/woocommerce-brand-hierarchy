@@ -1,0 +1,65 @@
+.wcbh-subcategories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.wcbh-subcategory-card {
+    flex: 1 1 200px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.wcbh-subcategory-card:hover {
+    border-color: #000;
+}
+
+.wcbh-brand-banner img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+.wcbh-categories-grid,
+.wcbh-subcategories-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.wcbh-category-card,
+.wcbh-subcategory-card {
+    flex: 1 1 220px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.wcbh-category-card:hover,
+.wcbh-subcategory-card:hover {
+    border-color: #000;
+}
+
+.wcbh-category-image img,
+.wcbh-subcategory-image img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.wcbh-category-info,
+.wcbh-subcategory-info {
+    padding: 10px;
+}

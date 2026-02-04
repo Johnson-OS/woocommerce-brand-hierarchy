@@ -1,0 +1,168 @@
+/* Woocommerce Brand Hierarchy – hide category cards ONLY on subcategory page */
+/* Product list – Brand column width */
+.wp-list-table .column-wcbh_brand {
+    width: 180px;
+    min-width: 160px;
+    text-overflow: ellipsis;
+}
+
+/* Optional: make multiple brands wrap nicely */
+.wp-list-table .column-wcbh_brand a {
+    display: inline-block;
+    margin-right: 4px;
+    white-space: nowrap;
+}
+.brand-category-title {
+    font-family: var(--theme-font-h6_font-family, inherit);
+    font-size: var(--theme-font-h6_font-size, 1rem);
+    font-weight: var(--theme-font-h6_font-weight, 600);
+    font-style: var(--theme-font-h6_font-style, normal);
+    line-height: var(--theme-font-h6_line-height, 1.4);
+    text-decoration: var(--theme-font-h6_text-decoration, none);
+    text-transform: var(--theme-font-h6_text-transform, none);
+    letter-spacing: var(--theme-font-h6_letter-spacing, normal);
+}
+
+.wcbh-brand-subcategory-page li.product.product-category {
+    display: none !important;
+}
+.wcbh-page {
+    width: 100%;
+}
+.wcbh-brand-header {
+    margin-bottom: 2rem;
+}
+.wcbh-top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+.wcbh-brand-thumbnail {
+    width: 300px;
+    max-width: 300px !important;
+    height: 150px !important;
+    object-fit: contain;
+    display: block;
+    margin: 0 4rem 2rem 0;
+}
+
+.wcbh-brand-header .page-title {
+    padding: 0.5rem 1.5rem;
+    color: white;
+    border-radius: 0.5rem;
+    width: fit-content;
+    background-color: var(--woocommerce);
+}
+.wcbh-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.wcbh-grid-item {
+    border: 1px solid #eee;
+    padding: 16px;
+    text-align: center;
+}
+
+.wcbh-grid-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.wcbh-count {
+    display: block;
+    font-size: 0.85em;
+    opacity: 0.7;
+}
+
+.wcbh-products-grid {
+    width: 100% !important;
+}
+.brand-categories-grid {
+    display: grid;
+    width: 100% !important;
+    height: min-content;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+.brand-category-card {
+    /*border: 1px solid #eee;*/
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.brand-category-card:hover {
+
+    /*transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);*/
+}
+.brand-category-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.brand-category-card h3 {
+    margin: 10px 0 5px;
+    font-size: 16px;
+}
+.brand-category-count {
+    font-size: 14px;
+    color: #666;
+}
+.wcbh-brand-banner-row {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2rem;
+}
+/* WC Brand Hierarchy – subcategory products page only */
+.wcbh-brand-subcategory-page li.product.product-category {
+    display: none !important;
+}
+/* WC Brand Hierarchy – Brand banner */
+.wcbh-brand-banner {
+    display: none;
+    margin: 0 4rem 2rem 0;
+    text-align: center;
+}
+.wcbh-banner-preview {
+    margin-top: 3rem;
+}
+
+.wcbh-brand-banner-img {
+    width: 300px;
+    max-width: 300px !important;
+    height: auto;
+    object-fit: cover;
+}
+
+
+/* Show banner on tablet + desktop */
+@media (min-width: 768px) {
+    .wcbh-brand-banner {
+        display: block;
+    }
+}
+.woocommerce-breadcrumb {
+    width: fit-content !important;
+}
+.breadcrumb,
+.woocommerce-breadcrumb {
+    direction: rtl;
+    unicode-bidi: isolate;
+}
+.woocommerce-breadcrumb span,
+.woocommerce-breadcrumb a {
+    unicode-bidi: isolate;
+}
+
+/* If site os rtl
+body.rtl .woocommerce-breadcrumb {
+    direction: ltr;
+    unicode-bidi: isolate;
+}
+*/
+
+
