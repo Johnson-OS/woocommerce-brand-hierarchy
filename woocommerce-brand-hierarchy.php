@@ -4,7 +4,7 @@
  * Plugin Name: WooCommerce Brand Hierarchy
  * Plugin URI:  https://pixadv.com/wc-brand-hierarchy
  * Description: Brand → Category → Subcategory navigation for WooCommerce
- * Version:     1.0.0
+ * Version:     1.0.1
  * Author:      PixADV
  * Author URI:  https://pixadv.com
  * License:     GPL v2 or later

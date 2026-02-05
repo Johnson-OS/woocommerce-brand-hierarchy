@@ -42,29 +42,48 @@ final class BrandCsvImport
             return;
         }
 
-        $brandSlug = sanitize_title($data['wcbh_brand']);
+        $brandName = trim($data['wcbh_brand']);
+        $brandSlug = sanitize_title($brandName);
+
+        // Try to find existing term by slug
         $brand = term_exists($brandSlug, BrandTaxonomy::TAXONOMY);
 
         if (!$brand) {
-            $brand = wp_insert_term($brandSlug, BrandTaxonomy::TAXONOMY);
-            $brandId = $brand['term_id'] ?? null;
-        } else {
-            $brandId = $brand['term_id'];
+            $brand = wp_insert_term($brandName, BrandTaxonomy::TAXONOMY, [
+                'slug' => $brandSlug,
+            ]);
         }
 
-        if (!$brandId) return;
+        if (is_wp_error($brand)) {
+            return;
+        }
 
-        // Assign product to brand
-        wp_set_object_terms($product->get_id(), $brandSlug, BrandTaxonomy::TAXONOMY, false);
+        $brandId = (int) $brand['term_id'];
 
-        // Process Thumbnails (if not done before)
+        // Assign product to brand (use ID, safest)
+        wp_set_object_terms(
+            $product->get_id(),
+            [$brandId],
+            BrandTaxonomy::TAXONOMY,
+            false
+        );
+
+        // Process Thumbnail
         if (!empty($data['wcbh_brand_thumbnail'])) {
-            $this->processBrandMediaColumn($data['wcbh_brand_thumbnail'], 'thumbnail_id');
+            $this->processBrandMediaColumn(
+                $data['wcbh_brand_thumbnail'],
+                'thumbnail_id',
+                $brandId
+            );
         }
 
-        // Process Banners (if not done before)
+        // Process Banner
         if (!empty($data['wcbh_brand_banner'])) {
-            $this->processBrandMediaColumn($data['wcbh_brand_banner'], 'brand_banner_id');
+            $this->processBrandMediaColumn(
+                $data['wcbh_brand_banner'],
+                'brand_banner_id',
+                $brandId
+            );
         }
     }
 
